@@ -3,13 +3,13 @@ const chalk = require('chalk');
 require('./models'); // Require all the models
 
 // Sync the db, creating it if necessary
-const isTest = process.env.NODE_ENV === 'testing';
-const sync = (force = isTest) => {
+const isProd = process.env.NODE_ENV === 'production';
+const sync = (force = !isProd) => {
   return db.sync({force})
     .then(ok => console.log(chalk.green(`Synced models to database ${db.config.database}`)))
     .catch(fail => {
       // If Prod, do not create new DBs
-      // if (!isTest) {
+      // if (isProd) {
       //   return chalk.red(fail)
       // }
       // Otherwise, do this autocreate nonsense
