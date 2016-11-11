@@ -9,8 +9,8 @@ const PATHS = {
 }
 const PORT = process.env.PORT || 3000;
 const chalk = require('chalk');
-// if (process.env.NODE_ENV !== 'production')
-//   require('dotenv').config();
+if (process.env.NODE_ENV !== 'production')
+  require('dotenv').config();
 
 // Logging, static, and body-parser middleware
 app.use(morgan('dev'));

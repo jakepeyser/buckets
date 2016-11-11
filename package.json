@@ -13,7 +13,8 @@
     "dev": "nodemon --watch server -e js server/app.js",
     "build": "webpack",
     "build-watch": "webpack -w --progress",
-    "stats": "webpack --profile --json > stats.json"
+    "stats": "webpack --profile --json > stats.json",
+    "seed": "node server/db/seed.js"
   },
   "license": "MIT",
   "repository": {
@@ -39,7 +40,8 @@
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.6.x",
     "redux-logger": "^2.7.x",
-    "redux-thunk": "^2.1.x"
+    "redux-thunk": "^2.1.x",
+    "sequelize": "^3.24.6"
   },
   "devDependencies": {
     "babel": "^6.5.x",
@@ -49,6 +51,7 @@
     "babel-preset-react": "^6.16.x",
     "clean-webpack-plugin": "^0.1.1x",
     "css-loader": "^0.25.x",
+    "dotenv": "^2.0.x",
     "extract-text-webpack-plugin": "^1.0.x",
     "favicons-webpack-plugin": "0.0.x",
     "file-loader": "^0.9.x",
