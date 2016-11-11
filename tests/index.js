@@ -2,4 +2,10 @@ if (process.env.NODE_ENV !== 'production')
   require('dotenv').config();
 
 // Run all tests
-require('./goal.test.js');
+const tests = [
+  'goal',
+  'user',
+  'snippet'
+]
+
+tests.forEach(test => require(`./${test}.test.js`))

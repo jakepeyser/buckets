@@ -1,19 +1,19 @@
 const Goal = require('./goal');
+const User = require('./user');
+const Category = require('./category');
+const Tag = require('./tag');
+const Snippet = require('./snippet');
 
 // Form the associations
-
-// Song.belongsTo(Album);
-// Album.hasMany(Song);
-// Album.belongsTo(Artist); // "Album Artist" is a thing, even if there are
-//                          // other artists on the album.
-
-
-// Artist.belongsToMany(Song, { through: 'artistSong' });
-// Song.belongsToMany(Artist, { through: 'artistSong' });
-
-// Song.belongsToMany(Playlist, { through: 'playlistSong' });
-// Playlist.belongsToMany(Song, { through: 'playlistSong' });
+Goal.belongsTo(Category);
+Goal.hasMany(Snippet);
+Goal.belongsToMany(Tag, { through: 'goalTag' });
+Goal.belongsToMany(User, { through: 'like' });
 
 module.exports = {
-  Goal
+  Goal,
+  User,
+  Category,
+  Tag,
+  Snippet
 };

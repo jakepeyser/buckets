@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "axios": "^0.15.x",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.x",
     "chai-properties": "^1.2.1",
     "chalk": "^1.1.x",
